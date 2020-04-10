@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:font="clr-namespace:TestFreshMvvmApp.DesignPlatforms;assembly=TestFreshMvvmApp"
+             mc:Ignorable="d"
+             x:Class="TestFreshMvvmApp.Pages.ContactListPage">
+    <NavigationPage.TitleView>
+        <Label Text="Контакты" 
+               FontFamily="{x:Static font:ContactDesignClass.Font}"
+               TextColor="{x:Static font:ContactDesignClass.BackgroundColor}"/>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <ListView ItemsSource="{Binding ContactList}" SelectedItem="{Binding SelectedContact}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Name}" Detail="{Binding Number}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>
